@@ -38,6 +38,7 @@ IF %var1% GTR %var2% (
 
 REM      BATCH FILE
 echo Введите 3  R  READ
+echo Введите 2  sfc /scannow
 echo Введите 1  D  DELETE READ
 
 
@@ -54,6 +55,9 @@ IF %var3% GTR %var4% (
 	FOR /r %%G in ("*") Do (@echo %%G
 	icacls * /grant *S-1-1-0:D )
 
+) ELSE (
+	sfc /scannow
+
 )
 
 
@@ -62,4 +66,3 @@ pause
 cls
 cd "%ddссk2%\"
 goto loop
-
