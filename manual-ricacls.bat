@@ -67,5 +67,6 @@ cls
 cd "%ddссk2%\"
 goto loop
 
-:: CREATE PAVEL GAPONOV slon otstan ti vseh pobedil
+:: CREATED PAVEL GAPONOV slon otstan ti vseh pobedil
+
 
