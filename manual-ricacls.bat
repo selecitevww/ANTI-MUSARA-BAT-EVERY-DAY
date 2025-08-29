@@ -1,33 +1,65 @@
-::[Bat To Exe Converter]
-::
-::YAwzoRdxOk+EWAnk
-::fBw5plQjdG8=
-::YAwzuBVtJxjWCl3EqQJgSA==
-::ZR4luwNxJguZRRnk
-::Yhs/ulQjdF+5
-::cxAkpRVqdFKZSDk=
-::cBs/ulQjdF+5
-::ZR41oxFsdFKZSDk=
-::eBoioBt6dFKZSTk=
-::cRo6pxp7LAbNWATEpCI=
-::egkzugNsPRvcWATEpCI=
-::dAsiuh18IRvcCxnZtBJQ
-::cRYluBh/LU+EWAnk
-::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJpcUIaFV3bcjLjX/tFsbGb
-::ZQ05rAF9IBncCkqN+0xwdVsNFV3MZTLjSOxFsaaitrPn
-::ZQ05rAF9IAHYFVzEqQIiIRhVTwiRcWa7CKAd5Ig=
-::eg0/rx1wNQPfEVWB+kM9LVsJDBaLP2q5CqZR5en1+uuLwg==
-::fBEirQZwNQPfEVWB+kM9LVsJDBaLP2q5CqZR5en1+uuLwg==
-::cRolqwZ3JBvQF1fEqQIiIRhVTwiRcWa7CKAd5Ig=
-::dhA7uBVwLU+EWEuN90MzJAgZQQWMKWq2Zg==
-::YQ03rBFzNR3SWATE5kszKRhYX0mPPWWvB7l8
-::dhAmsQZ3MwfNWATE5kszKRhYX0mPPWWvB7l8
-::ZQ0/vhVqMQ3MEVWAtB9wOhJXTQeOLya3B7sJ6eSb
-::Zg8zqx1/OA3MEVWAtB9wOhJXTQeOLya3B7sJ6eSb
-::dhA7pRFwIByZRRmW/UExKxdHAQmDMn67CtU=
-::Zh4grVQjdDeDJGyX8VAjFLmU7sQg/Ml6pHW+KEo7TSq7hkgOX/YwaLPJ07ePI+wAp0jle4Ms2jRfgM5s
-::YB416Ek+ZW8=
-::
-::
-::978f952a14a936cc963da21a135fa983
+@echo off
+
+REM      BATCH FILE
+
+chcp 65001
+
+cls
+
+color 70
+
+ECHO УКАЖИТЕ ДИСК: ПРИМЕР: C
+
+set /p "ddссk1="
+set "ddссk2=%ddссk1%:"
+%ddссk2%
+
+cd "%ddссk2%\"
+:loop
+dir
+echo Введите путь к директории в которой находятся файлы: ПРИМЕР: Users 
+
+set /p "path1="
+echo %path1%
+set "path2=%path1%"
+echo %path2%
+cd %path2%
+dir
+echo Если в нужном каталоге, то введите 1, а если нет, то 3 и больше.
+
+set /p "var1=" && cls
+
+SET var2=2 && cls
+
+IF %var1% GTR %var2% (
+    goto loop
+
+)
+
+REM      BATCH FILE
+echo Введите 3  R  READ
+echo Введите 1  D  DELETE READ
+
+
+set /p "var3="
+
+SET var4=2 
+
+
+IF %var3% GTR %var4% (
+	FOR /r %%G in ("*") Do (@echo %%G
+	icacls * /grant *S-1-1-0:R )
+
+) ELSE IF %var3% LSS %var4% (
+	FOR /r %%G in ("*") Do (@echo %%G
+	icacls * /grant *S-1-1-0:D )
+
+)
+
+
+
+pause
+cls
+cd "%ddссk2%\"
+goto loop
+
