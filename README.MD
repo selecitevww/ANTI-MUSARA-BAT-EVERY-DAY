@@ -21,3 +21,5 @@ sfc /scannow
 
 P.S. Такой же как и вы клиент серверный терминатор!
 
+![1](https://github.com/selecitevww/ANTI-MUSARA-BAT-EVERY-DAY/blob/main/234234.png)
+
